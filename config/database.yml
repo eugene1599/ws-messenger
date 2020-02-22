@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ws_messenger_development
+
+  test:
+  <<: *default
+  database: ws_messenger_test
+
+production:
+  <<: *default
+  database: ws_messenger_production
+  username: ws_messenger
+  password: <%= ENV['WS_MESSENGER_DATABASE_PASSWORD'] %>
