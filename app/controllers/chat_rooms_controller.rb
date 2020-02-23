@@ -13,7 +13,7 @@ class ChatRoomsController < ApplicationController
 
     redirect_to chat_room_path(@chat_room)
   end
-  
+
   def show
     @message = Message.new
   end
@@ -21,7 +21,7 @@ class ChatRoomsController < ApplicationController
   def private
     @chat_rooms = current_user.all_private_rooms
     @is_private = true
-    
+
     render 'chat_rooms/index'
   end
 

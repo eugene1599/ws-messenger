@@ -14,7 +14,7 @@ class Ability
     can :manage, RoomMember, chat_room: { user_id: user.id }
     can :create, Message, user_id: user.id
     can :invite, ChatRoom do |chat_room|
-      chat_room.user_id = user.id
+      chat_room.user_id == user.id
     end
   end
 end

@@ -15,7 +15,8 @@ en:
     invite:
       title: Invite to private room
       body: '%{user} invite you to %{chat_name}'
+    access_denied: "You don't have permissions for this action"
   modal:
     close: Close
-  errors: 
+  errors:
     user_not_found: User not found
