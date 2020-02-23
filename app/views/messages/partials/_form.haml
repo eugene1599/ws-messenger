@@ -1,4 +1,4 @@
-%div{ style: 'width: 100%; margin: 20px 0' }
+%div{ style: 'width: 100%; margin: 20px 0;' }
 = simple_form_for [@chat_room, @message], remote: true, html: { class: ' input-group' } do |f|
   = f.input_field :message, as: :string, class: 'form-control', label: false, autofocus: true
   .input-group-append
