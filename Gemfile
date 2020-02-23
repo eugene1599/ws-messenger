@@ -9,6 +9,7 @@ gem 'puma', '~> 4.1'
 gem 'redis', '~> 4.0'
 gem 'webpacker', '~> 4.0'
 
+gem 'activeadmin'
 gem 'cancancan'
 gem 'devise'
 gem "anycable-rails"
