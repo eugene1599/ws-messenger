@@ -34,9 +34,9 @@ module Messenger
 
     def notify_invited_user
       WebNotificationsChannel.broadcast_to(
-        invited_user, 
-        title: I18n.t('notifications.invite.title'), 
-        body: I18n.t('notifications.invite.body', user: chat_room.user.email, chat_name: chat_room.name), 
+        invited_user,
+        title: I18n.t('notifications.invite.title'),
+        body: I18n.t('notifications.invite.body', user: chat_room.user.email, chat_name: chat_room.name),
       )
     end
 

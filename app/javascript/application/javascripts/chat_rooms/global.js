@@ -9,4 +9,4 @@ function receiveNotificationCallback(data) {
 
 $(document).ready(function() {
   subscribeToWebNotifications(receiveNotificationCallback);
-})
+});

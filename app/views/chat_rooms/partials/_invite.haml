@@ -14,7 +14,7 @@
           .form-group
             - if @chat_room.members.present?
               %b
-                Members: 
+                Members:
               = @chat_room.members.pluck(:email).join(', ')
               %br
               %br

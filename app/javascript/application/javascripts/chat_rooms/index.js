@@ -1,14 +1,15 @@
 import { subscribeToRoomsList } from '../../../channels/chat_room_channel'
 
-let container = $('.chat-rooms-container:not(.private-rooms)');
+let container = $('.chat-rooms-container:not(.private-rooms)'),
+    noRoomsLabelSelector = '.no-rooms-label';
 
-function removeNoMessagesLabel() {
-  $('.no-rooms-label').remove();
+function removeNoRoomsLabel() {
+  $(noRoomsLabelSelector).remove();
 }
 
 function receivedCallback(data) {
   $(data).prependTo(container).hide().slideDown();
-  removeNoMessagesLabel();
+  removeNoRoomsLabel();
 }
 
 if (container.length) {

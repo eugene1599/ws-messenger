@@ -18,11 +18,9 @@ function receiveMessageCallback(data) {
   removeNoMessagesLabel();
 }
 
-if (chatRoom.length) {  
+if (chatRoom.length) {
   $(document).ready(function() {
     subscribeToChatRoom(chatRoomId, receiveMessageCallback);
     scrollChatToBottom();
   });
 }
-
-
