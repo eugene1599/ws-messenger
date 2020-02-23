@@ -1,0 +1,24 @@
+%nav.navbar.navbar-expand-md.fixed-top.navbar-dark.bg-dark
+  = link_to t('navbar.title'), root_path, class: 'navbar-brand'
+    
+  %button.navbar-toggler.p-0.border-0{"data-toggle" => "offcanvas", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+    %ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        %li.nav-item{ class: ('active' if current_page?(root_path)) }
+          = link_to 'All Chat Rooms', root_path, class: 'nav-link'
+        %li.nav-item{ class: ('active' if current_page?(private_chat_rooms_path)) }
+          = link_to 'Private Rooms', private_chat_rooms_path, class: 'nav-link'
+        %li.nav-item{ class: ('active' if current_page?(new_chat_room_path)) }
+          -# %a.nav-link{:href => "#"} Notifications
+          = link_to 'New Channel', new_chat_room_path, class: "nav-link"
+        
+        %li.nav-item
+          = link_to 'Blog', '#', class: "nav-link"
+
+    .my-2.my-lg-0
+      - if user_signed_in?
+        %span{ style: 'color: #fff; margin: 0 15px' }
+          = current_user.email
+        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning'

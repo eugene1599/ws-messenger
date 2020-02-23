@@ -1,0 +1,15 @@
+%div{ style: 'margin: 30px 0;' }
+  = simple_form_for @chat_room do |f|
+    .form-group
+      = f.label :name
+      = f.input_field :name, class: 'form-control'
+      = f.error :name, class: 'form-text'
+    .form-group
+      = f.label :description
+      = f.input_field :description, class: 'form-control'
+      = f.error :description, class: 'form-text'
+    .form-group
+      = f.label :room_type
+      = f.input_field :room_type, as: :select, collection: ChatRoom.room_types.keys.to_a, class: 'form-control'
+      = f.error :room_type, class: 'form-text'
+    = f.button :submit, class: 'btn btn-success'

@@ -9,9 +9,12 @@ gem 'puma', '~> 4.1'
 gem 'redis', '~> 4.0'
 gem 'webpacker', '~> 4.0'
 
+gem 'cancancan'
 gem 'devise'
 gem "anycable-rails"
 gem 'hamlit'
+gem 'sidekiq'
+gem 'simple_form'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -20,7 +23,7 @@ gem 'hamlit'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
 
@@ -32,6 +35,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
