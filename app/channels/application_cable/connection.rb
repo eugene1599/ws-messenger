@@ -13,7 +13,8 @@ module ApplicationCable
     private
 
     def find_verified_user
-      verified_user = env['warden'].user
+      env['rack.session'] = cookies.encrypted[Rails.application.config.session_options[:key]]
+      verified_user = Warden::SessionSerializer.new(env).fetch(:user)
       return verified_user if verified_user
 
       reject_unauthorized_connection
