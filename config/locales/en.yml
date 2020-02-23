@@ -1,6 +1,11 @@
 en:
   navbar:
     title: WsMessenger App
+    new_chat: New Chat
+    public_rooms: Public Chat Rooms
+    private_rooms: Private Rooms
+    blog: Blog
+    logout: Logout
   chat_rooms:
     no_channels: There are no channels.
     no_messages: There are no messages.
