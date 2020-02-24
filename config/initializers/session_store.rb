@@ -1,3 +1,3 @@
 Rails.application.config.session_store :cookie_store,
-  key: "_any_cable_session",
+  key: "_ws_messenger_session",
   domain: :all
