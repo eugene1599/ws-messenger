@@ -1,0 +1,10 @@
+{
+  "proxies": {
+    "/cable/": {
+      "origin": "https://${WS_SERVER_APP_NAME}.herokuapp.com/"
+    },
+    "/": {
+      "origin": "https://${MAIN_APP_NAME}.herokuapp.com"
+    }
+  }
+}
