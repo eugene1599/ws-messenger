@@ -18,14 +18,6 @@ environment.config.merge({
           options: 'jQuery'
         }]
       }
-      // ,
-      // {
-      //   test: require.resolve('rails-ujs'),
-      //   use: [{
-      //     loader: 'expose-loader',
-      //     options: 'Rails'
-      //   }]
-      // }
     ]
   }
 });

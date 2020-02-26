@@ -1,0 +1,10 @@
+.my-3.p-3.bg-white.rounded.box-shadow
+  %h6.border-bottom.border-gray.pb-2.mb-0 Channels
+  .chat-rooms-container{ class: ('private-rooms' if @is_private)}
+    - if @chat_rooms.present?
+      = render partial: 'chat_rooms/partials/chat_room', collection: @chat_rooms
+    - else
+      .media.text-muted.pt-3.no-rooms-label
+      %p.media-body.pb-3.mb-0.small.lh-125.border-gray
+        = t('chat_rooms.no_channels')
+        = link_to t('chat_rooms.new_one'), new_chat_room_path

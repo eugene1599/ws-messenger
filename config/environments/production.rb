@@ -104,5 +104,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.action_cable.url = "wss://ws-messenger.herokuapp.com/cable"
+  config.action_cable.url = "wss://#{ENV["CABLE_URL"]}"
+  # config.action_cable.url = "wss://ws-messenger.herokuapp.com/cable"
+  # config.action_cable.allowed_request_origins = ['https://ws-messenger.herokuapp.com', 'http://ws-messenger.herokuapp.com']
 end

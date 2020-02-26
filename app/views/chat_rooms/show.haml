@@ -1,0 +1,7 @@
+#chat-room.row.justify-content-md-center.h-100{data: { chatroom_id: params[:id] }}
+  .col-8
+    %h3= @chat_room.name
+    - if @chat_room._private? && @chat_room.user == current_user
+      .text-right
+        = render 'chat_rooms/partials/invite'
+    = render 'messages/list', messages: @chat_room.messages

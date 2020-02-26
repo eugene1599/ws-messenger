@@ -1,0 +1,6 @@
+<% if @invited_user %>
+  toastr.success('<%= t('chat_rooms.user_invited') %>');
+  $('#inviteModal').modal('hide');
+<% else %>
+  toastr.error('<%= t('errors.user_not_found') %>');
+<% end %>

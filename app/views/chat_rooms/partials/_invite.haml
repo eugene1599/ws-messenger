@@ -1,0 +1,25 @@
+/ Button trigger modal
+%button.btn.btn-link{"data-target": "#inviteModal", "data-toggle": "modal", type: "button"}
+  = t('chat_rooms.invite_user')
+
+#inviteModal.modal.fade{"aria-hidden": "true", "aria-labelledby": "inviteModalLabel", role: "dialog", tabindex: "-1"}
+  .text-left.modal-dialog{role: "document"}
+    .modal-content
+      = simple_form_for :invite, url: invite_chat_room_path(@chat_room), remote: true do |f|
+        .modal-header
+          %h5#inviteModalLabel.modal-title= t('chat_rooms.invite_user')
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
+            %span{"aria-hidden": "true"} ×
+        .modal-body
+          .form-group
+            - if @chat_room.members.present?
+              %b
+                Members:
+              = @chat_room.members.pluck(:email).join(', ')
+              %br
+              %br
+            = f.label :user_email
+            = f.input_field :email, class: 'form-control'
+        .modal-footer
+          %button.btn.btn-secondary{"data-dismiss": "modal", type: "button"}= t('modal.close')
+          = f.button :submit, t('chat_rooms.invite_user'), class: 'btn btn-primary'
